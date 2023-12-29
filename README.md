@@ -1,2 +1,2 @@
-# eduglo-sms
-EduGlo - Student Management System
+# EduGlo - Student Management System
+
