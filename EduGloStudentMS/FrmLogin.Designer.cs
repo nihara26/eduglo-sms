@@ -55,14 +55,14 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(314, 505);
+            this.panel1.Size = new System.Drawing.Size(337, 505);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(114, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(125, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(89, 51);
             this.pictureBox2.TabIndex = 2;
@@ -73,9 +73,9 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(53, 136);
+            this.pictureBox1.Location = new System.Drawing.Point(63, 141);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 196);
+            this.pictureBox1.Size = new System.Drawing.Size(207, 195);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(78, 392);
+            this.label1.Location = new System.Drawing.Point(84, 395);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 33);
             this.label1.TabIndex = 0;
@@ -104,7 +104,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(371, 168);
+            this.label3.Location = new System.Drawing.Point(377, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 23);
             this.label3.TabIndex = 2;
@@ -114,9 +114,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(371, 273);
+            this.label4.Location = new System.Drawing.Point(377, 278);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 29);
+            this.label4.Size = new System.Drawing.Size(86, 23);
             this.label4.TabIndex = 3;
             this.label4.Text = "Password";
             // 
@@ -137,6 +137,7 @@
             this.txtpassword.Name = "txtpassword";
             this.txtpassword.Size = new System.Drawing.Size(252, 24);
             this.txtpassword.TabIndex = 5;
+            this.txtpassword.UseSystemPasswordChar = true;
             // 
             // btnlogin
             // 
@@ -148,6 +149,7 @@
             this.btnlogin.TabIndex = 6;
             this.btnlogin.Text = "Login";
             this.btnlogin.UseVisualStyleBackColor = false;
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // btnclear
             // 
@@ -159,6 +161,7 @@
             this.btnclear.TabIndex = 7;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btnexit
             // 
@@ -170,13 +173,14 @@
             this.btnexit.TabIndex = 8;
             this.btnexit.Text = "Exit";
             this.btnexit.UseVisualStyleBackColor = false;
+            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ClientSize = new System.Drawing.Size(856, 505);
+            this.ClientSize = new System.Drawing.Size(868, 505);
             this.Controls.Add(this.btnexit);
             this.Controls.Add(this.btnclear);
             this.Controls.Add(this.btnlogin);

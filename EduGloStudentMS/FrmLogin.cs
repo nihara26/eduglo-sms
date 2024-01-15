@@ -31,5 +31,35 @@ namespace EduGloStudentMS
         {
 
         }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            string username = "admin";
+            string password = "12345";
+            if (username == txtusername.Text && password == txtpassword.Text)
+            {
+                MessageBox.Show("Login Sucessfully");
+                FrmDashboard d = new FrmDashboard();
+                this.Hide();
+                d.Show();
+
+
+            }
+            else
+            {
+                MessageBox.Show("Login Failed");
+            }
+        }
+
+        private void btnclear_Click(object sender, EventArgs e)
+        {
+            txtusername.Clear();
+            txtpassword.Clear();
+        }
     }
 }

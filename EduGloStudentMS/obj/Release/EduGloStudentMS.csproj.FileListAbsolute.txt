@@ -8,3 +8,7 @@ D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.csproj.Generate
 D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.csproj.CoreCompileInputs.cache
 D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.exe
 D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.pdb
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.FrmDashboard.resources
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.FrmCourse.resources
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.FrmLecturer.resources
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Release\EduGloStudentMS.FrmStudent.resources
