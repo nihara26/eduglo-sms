@@ -243,7 +243,7 @@
             // 
             this.btninsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btninsert.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninsert.Location = new System.Drawing.Point(97, 587);
+            this.btninsert.Location = new System.Drawing.Point(95, 597);
             this.btninsert.Name = "btninsert";
             this.btninsert.Size = new System.Drawing.Size(167, 59);
             this.btninsert.TabIndex = 24;
@@ -254,7 +254,7 @@
             // 
             this.btnupdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnupdate.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdate.Location = new System.Drawing.Point(291, 587);
+            this.btnupdate.Location = new System.Drawing.Point(289, 597);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(167, 59);
             this.btnupdate.TabIndex = 25;
@@ -265,7 +265,7 @@
             // 
             this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btndelete.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndelete.Location = new System.Drawing.Point(97, 676);
+            this.btndelete.Location = new System.Drawing.Point(95, 686);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(167, 59);
             this.btndelete.TabIndex = 26;
@@ -276,7 +276,7 @@
             // 
             this.btnclear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnclear.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.Location = new System.Drawing.Point(291, 676);
+            this.btnclear.Location = new System.Drawing.Point(289, 686);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(167, 59);
             this.btnclear.TabIndex = 27;
@@ -311,7 +311,7 @@
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(89, 51);
+            this.pictureBox2.Size = new System.Drawing.Size(99, 59);
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
@@ -320,7 +320,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1275, 771);
+            this.ClientSize = new System.Drawing.Size(1275, 787);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnshowall);
             this.Controls.Add(this.btnsearch);

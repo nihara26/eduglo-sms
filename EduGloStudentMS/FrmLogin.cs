@@ -43,7 +43,7 @@ namespace EduGloStudentMS
             string password = "12345";
             if (username == txtusername.Text && password == txtpassword.Text)
             {
-                MessageBox.Show("Login Sucessfully");
+                MessageBox.Show("Login successful. Welcome!");
                 FrmDashboard d = new FrmDashboard();
                 this.Hide();
                 d.Show();
@@ -52,7 +52,7 @@ namespace EduGloStudentMS
             }
             else
             {
-                MessageBox.Show("Login Failed");
+                MessageBox.Show("Invalid username or password. Please try again.");
             }
         }
 
