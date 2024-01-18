@@ -91,12 +91,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Modern No. 20", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(742, 65);
+            this.label2.Font = new System.Drawing.Font("Engravers MT", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(703, 61);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 43);
+            this.label2.Size = new System.Drawing.Size(274, 35);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Dashborad";
+            this.label2.Text = "Dashboard";
             // 
             // btnstudent
             // 
