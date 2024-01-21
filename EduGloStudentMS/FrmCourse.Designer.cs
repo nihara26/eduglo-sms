@@ -37,7 +37,6 @@
             this.btndelete = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btninsert = new System.Windows.Forms.Button();
-            this.comcouresNOM = new System.Windows.Forms.ComboBox();
             this.txtcourseduration = new System.Windows.Forms.TextBox();
             this.txtcoursename = new System.Windows.Forms.TextBox();
             this.txtcourseid = new System.Windows.Forms.TextBox();
@@ -45,6 +44,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtcouresNOM = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -71,7 +74,7 @@
             // 
             // btnshowall
             // 
-            this.btnshowall.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnshowall.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnshowall.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnshowall.Location = new System.Drawing.Point(962, 124);
             this.btnshowall.Name = "btnshowall";
@@ -82,7 +85,7 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsearch.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnsearch.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsearch.Location = new System.Drawing.Point(661, 124);
             this.btnsearch.Name = "btnsearch";
@@ -93,9 +96,9 @@
             // 
             // btnclear
             // 
-            this.btnclear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnclear.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnclear.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.Location = new System.Drawing.Point(275, 547);
+            this.btnclear.Location = new System.Drawing.Point(283, 547);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(167, 59);
             this.btnclear.TabIndex = 69;
@@ -104,7 +107,7 @@
             // 
             // btndelete
             // 
-            this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btndelete.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.Location = new System.Drawing.Point(81, 547);
             this.btndelete.Name = "btndelete";
@@ -115,9 +118,9 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnupdate.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnupdate.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdate.Location = new System.Drawing.Point(275, 458);
+            this.btnupdate.Location = new System.Drawing.Point(283, 458);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(167, 59);
             this.btnupdate.TabIndex = 67;
@@ -126,7 +129,7 @@
             // 
             // btninsert
             // 
-            this.btninsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btninsert.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btninsert.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btninsert.Location = new System.Drawing.Point(81, 458);
             this.btninsert.Name = "btninsert";
@@ -134,15 +137,6 @@
             this.btninsert.TabIndex = 66;
             this.btninsert.Text = "Insert";
             this.btninsert.UseVisualStyleBackColor = false;
-            // 
-            // comcouresNOM
-            // 
-            this.comcouresNOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comcouresNOM.FormattingEnabled = true;
-            this.comcouresNOM.Location = new System.Drawing.Point(247, 343);
-            this.comcouresNOM.Name = "comcouresNOM";
-            this.comcouresNOM.Size = new System.Drawing.Size(262, 26);
-            this.comcouresNOM.TabIndex = 65;
             // 
             // txtcourseduration
             // 
@@ -174,6 +168,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(54, 343);
             this.label8.Name = "label8";
@@ -184,16 +179,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(54, 287);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 29);
+            this.label4.Size = new System.Drawing.Size(89, 23);
             this.label4.TabIndex = 56;
             this.label4.Text = "Duration :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(54, 226);
             this.label1.Name = "label1";
@@ -204,12 +201,39 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(54, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 29);
+            this.label3.Size = new System.Drawing.Size(98, 23);
             this.label3.TabIndex = 54;
             this.label3.Text = "Course ID :";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.txtcouresNOM);
+            this.panel1.Location = new System.Drawing.Point(40, 134);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(491, 271);
+            this.panel1.TabIndex = 72;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Location = new System.Drawing.Point(40, 134);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(500, 281);
+            this.panel2.TabIndex = 73;
+            // 
+            // txtcouresNOM
+            // 
+            this.txtcouresNOM.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtcouresNOM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtcouresNOM.Location = new System.Drawing.Point(207, 208);
+            this.txtcouresNOM.Name = "txtcouresNOM";
+            this.txtcouresNOM.Size = new System.Drawing.Size(262, 24);
+            this.txtcouresNOM.TabIndex = 74;
             // 
             // FrmCourse
             // 
@@ -223,7 +247,6 @@
             this.Controls.Add(this.btndelete);
             this.Controls.Add(this.btnupdate);
             this.Controls.Add(this.btninsert);
-            this.Controls.Add(this.comcouresNOM);
             this.Controls.Add(this.txtcourseduration);
             this.Controls.Add(this.txtcoursename);
             this.Controls.Add(this.txtcourseid);
@@ -233,9 +256,13 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnhome);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.Name = "FrmCourse";
             this.Text = "FrmCourse";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,7 +278,6 @@
         private System.Windows.Forms.Button btndelete;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btninsert;
-        private System.Windows.Forms.ComboBox comcouresNOM;
         private System.Windows.Forms.TextBox txtcourseduration;
         private System.Windows.Forms.TextBox txtcoursename;
         private System.Windows.Forms.TextBox txtcourseid;
@@ -259,5 +285,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtcouresNOM;
     }
 }

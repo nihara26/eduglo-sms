@@ -52,7 +52,10 @@
             this.txtlectureryoe = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -79,7 +82,7 @@
             // 
             // btnshowall
             // 
-            this.btnshowall.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnshowall.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnshowall.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnshowall.Location = new System.Drawing.Point(971, 122);
             this.btnshowall.Name = "btnshowall";
@@ -90,7 +93,7 @@
             // 
             // btnsearch
             // 
-            this.btnsearch.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnsearch.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnsearch.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnsearch.Location = new System.Drawing.Point(670, 122);
             this.btnsearch.Name = "btnsearch";
@@ -101,9 +104,9 @@
             // 
             // btnclear
             // 
-            this.btnclear.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnclear.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnclear.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclear.Location = new System.Drawing.Point(292, 678);
+            this.btnclear.Location = new System.Drawing.Point(301, 703);
             this.btnclear.Name = "btnclear";
             this.btnclear.Size = new System.Drawing.Size(167, 59);
             this.btnclear.TabIndex = 49;
@@ -112,9 +115,9 @@
             // 
             // btndelete
             // 
-            this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btndelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(153)))), ((int)(((byte)(153)))));
             this.btndelete.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndelete.Location = new System.Drawing.Point(98, 678);
+            this.btndelete.Location = new System.Drawing.Point(99, 703);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(167, 59);
             this.btndelete.TabIndex = 48;
@@ -123,9 +126,9 @@
             // 
             // btnupdate
             // 
-            this.btnupdate.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnupdate.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnupdate.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnupdate.Location = new System.Drawing.Point(292, 589);
+            this.btnupdate.Location = new System.Drawing.Point(301, 614);
             this.btnupdate.Name = "btnupdate";
             this.btnupdate.Size = new System.Drawing.Size(167, 59);
             this.btnupdate.TabIndex = 47;
@@ -134,9 +137,9 @@
             // 
             // btninsert
             // 
-            this.btninsert.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btninsert.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btninsert.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btninsert.Location = new System.Drawing.Point(98, 589);
+            this.btninsert.Location = new System.Drawing.Point(99, 614);
             this.btninsert.Name = "btninsert";
             this.btninsert.Size = new System.Drawing.Size(167, 59);
             this.btninsert.TabIndex = 46;
@@ -147,6 +150,12 @@
             // 
             this.comleccourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comleccourses.FormattingEnabled = true;
+            this.comleccourses.Items.AddRange(new object[] {
+            "Physics",
+            "Literature",
+            "Chemistry",
+            "Mathematics",
+            "Computer Science"});
             this.comleccourses.Location = new System.Drawing.Point(260, 436);
             this.comleccourses.Name = "comleccourses";
             this.comleccourses.Size = new System.Drawing.Size(262, 26);
@@ -200,8 +209,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(67, 436);
+            this.label8.Location = new System.Drawing.Point(14, 317);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(75, 23);
             this.label8.TabIndex = 36;
@@ -210,8 +220,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(67, 380);
+            this.label7.Location = new System.Drawing.Point(14, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 23);
             this.label7.TabIndex = 35;
@@ -220,8 +231,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(67, 326);
+            this.label6.Location = new System.Drawing.Point(14, 204);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 23);
             this.label6.TabIndex = 34;
@@ -230,6 +242,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(67, 271);
             this.label4.Name = "label4";
@@ -240,6 +253,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(67, 210);
             this.label1.Name = "label1";
@@ -250,6 +264,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(67, 152);
             this.label3.Name = "label3";
@@ -269,6 +284,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(67, 492);
             this.label5.Name = "label5";
@@ -286,12 +302,31 @@
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Location = new System.Drawing.Point(53, 122);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(491, 449);
+            this.panel1.TabIndex = 55;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Location = new System.Drawing.Point(44, 112);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(500, 459);
+            this.panel2.TabIndex = 74;
+            // 
             // FrmLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1251, 781);
+            this.ClientSize = new System.Drawing.Size(1251, 799);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.txtlectureryoe);
             this.Controls.Add(this.label5);
@@ -307,18 +342,19 @@
             this.Controls.Add(this.txtlecdob);
             this.Controls.Add(this.txtlecname);
             this.Controls.Add(this.txtlecturerid);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnhome);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.Name = "FrmLecturer";
             this.Text = "FrmLecturer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,5 +385,7 @@
         private System.Windows.Forms.TextBox txtlectureryoe;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
