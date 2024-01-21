@@ -145,9 +145,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(64, 503);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(83, 23);
+            this.label8.Size = new System.Drawing.Size(75, 23);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Courses :";
+            this.label8.Text = "Course :";
             // 
             // txtstudentid
             // 
