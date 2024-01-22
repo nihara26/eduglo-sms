@@ -62,7 +62,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(503, 49);
+            this.label2.Location = new System.Drawing.Point(521, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 27);
             this.label2.TabIndex = 4;
@@ -310,15 +310,15 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Location = new System.Drawing.Point(53, 122);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 449);
+            this.panel1.Size = new System.Drawing.Size(501, 448);
             this.panel1.TabIndex = 55;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Location = new System.Drawing.Point(44, 112);
+            this.panel2.Location = new System.Drawing.Point(43, 112);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 459);
+            this.panel2.Size = new System.Drawing.Size(498, 447);
             this.panel2.TabIndex = 74;
             // 
             // FrmLecturer

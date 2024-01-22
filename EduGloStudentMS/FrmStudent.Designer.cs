@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStudent));
             this.label2 = new System.Windows.Forms.Label();
             this.btnhome = new System.Windows.Forms.Button();
@@ -56,14 +57,28 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.datagridstudent = new System.Windows.Forms.DataGridView();
+            this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teleNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManagemntSystemDataSet = new EduGloStudentMS.StudentManagemntSystemDataSet();
+            this.studentTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSetTableAdapters.StudentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(526, 58);
+            this.label2.Location = new System.Drawing.Point(615, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(196, 28);
             this.label2.TabIndex = 3;
@@ -74,7 +89,7 @@
             this.btnhome.BackColor = System.Drawing.SystemColors.Control;
             this.btnhome.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnhome.BackgroundImage")));
             this.btnhome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnhome.Location = new System.Drawing.Point(1202, 12);
+            this.btnhome.Location = new System.Drawing.Point(1461, 12);
             this.btnhome.Name = "btnhome";
             this.btnhome.Size = new System.Drawing.Size(61, 53);
             this.btnhome.TabIndex = 4;
@@ -305,7 +320,7 @@
             // 
             this.btnsearch.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnsearch.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsearch.Location = new System.Drawing.Point(667, 134);
+            this.btnsearch.Location = new System.Drawing.Point(754, 134);
             this.btnsearch.Name = "btnsearch";
             this.btnsearch.Size = new System.Drawing.Size(167, 59);
             this.btnsearch.TabIndex = 28;
@@ -316,7 +331,7 @@
             // 
             this.btnshowall.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnshowall.Font = new System.Drawing.Font("Montserrat", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnshowall.Location = new System.Drawing.Point(968, 134);
+            this.btnshowall.Location = new System.Drawing.Point(1175, 134);
             this.btnshowall.Name = "btnshowall";
             this.btnshowall.Size = new System.Drawing.Size(167, 59);
             this.btnshowall.TabIndex = 29;
@@ -338,23 +353,115 @@
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Location = new System.Drawing.Point(48, 134);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(498, 448);
+            this.panel1.Size = new System.Drawing.Size(511, 448);
             this.panel1.TabIndex = 31;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Location = new System.Drawing.Point(39, 124);
+            this.panel2.Location = new System.Drawing.Point(37, 124);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(507, 458);
+            this.panel2.Size = new System.Drawing.Size(509, 446);
             this.panel2.TabIndex = 74;
+            // 
+            // datagridstudent
+            // 
+            this.datagridstudent.AutoGenerateColumns = false;
+            this.datagridstudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
+            this.datagridstudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridstudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.studentIDDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.dOBDataGridViewTextBoxColumn,
+            this.genderDataGridViewTextBoxColumn,
+            this.addressDataGridViewTextBoxColumn,
+            this.teleNoDataGridViewTextBoxColumn,
+            this.courseIDDataGridViewTextBoxColumn});
+            this.datagridstudent.DataSource = this.studentBindingSource;
+            this.datagridstudent.Location = new System.Drawing.Point(593, 208);
+            this.datagridstudent.Name = "datagridstudent";
+            this.datagridstudent.RowHeadersWidth = 51;
+            this.datagridstudent.RowTemplate.Height = 24;
+            this.datagridstudent.Size = new System.Drawing.Size(900, 546);
+            this.datagridstudent.TabIndex = 75;
+            // 
+            // studentIDDataGridViewTextBoxColumn
+            // 
+            this.studentIDDataGridViewTextBoxColumn.DataPropertyName = "Student_ID";
+            this.studentIDDataGridViewTextBoxColumn.HeaderText = "Student_ID";
+            this.studentIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.studentIDDataGridViewTextBoxColumn.Name = "studentIDDataGridViewTextBoxColumn";
+            this.studentIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dOBDataGridViewTextBoxColumn
+            // 
+            this.dOBDataGridViewTextBoxColumn.DataPropertyName = "DOB";
+            this.dOBDataGridViewTextBoxColumn.HeaderText = "DOB";
+            this.dOBDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dOBDataGridViewTextBoxColumn.Name = "dOBDataGridViewTextBoxColumn";
+            this.dOBDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // teleNoDataGridViewTextBoxColumn
+            // 
+            this.teleNoDataGridViewTextBoxColumn.DataPropertyName = "Tele_No";
+            this.teleNoDataGridViewTextBoxColumn.HeaderText = "Tele_No";
+            this.teleNoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.teleNoDataGridViewTextBoxColumn.Name = "teleNoDataGridViewTextBoxColumn";
+            this.teleNoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "CourseID";
+            this.courseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            this.courseIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "Student";
+            this.studentBindingSource.DataSource = this.studentManagemntSystemDataSet;
+            // 
+            // studentManagemntSystemDataSet
+            // 
+            this.studentManagemntSystemDataSet.DataSetName = "StudentManagemntSystemDataSet";
+            this.studentManagemntSystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
             // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1275, 797);
+            this.ClientSize = new System.Drawing.Size(1534, 791);
+            this.Controls.Add(this.datagridstudent);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnshowall);
             this.Controls.Add(this.btnsearch);
@@ -385,7 +492,11 @@
             this.MaximizeBox = false;
             this.Name = "FrmStudent";
             this.Text = "FrmStudent";
+            this.Load += new System.EventHandler(this.FrmStudent_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -420,5 +531,16 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.DataGridView datagridstudent;
+        private StudentManagemntSystemDataSet studentManagemntSystemDataSet;
+        private System.Windows.Forms.BindingSource studentBindingSource;
+        private StudentManagemntSystemDataSetTableAdapters.StudentTableAdapter studentTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dOBDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teleNoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
     }
 }

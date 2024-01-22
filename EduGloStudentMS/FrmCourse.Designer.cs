@@ -45,8 +45,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.txtcouresNOM = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -213,18 +213,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
             this.panel1.Controls.Add(this.txtcouresNOM);
-            this.panel1.Location = new System.Drawing.Point(40, 134);
+            this.panel1.Location = new System.Drawing.Point(34, 134);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(491, 271);
+            this.panel1.Size = new System.Drawing.Size(497, 271);
             this.panel1.TabIndex = 72;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Location = new System.Drawing.Point(40, 134);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(500, 281);
-            this.panel2.TabIndex = 73;
             // 
             // txtcouresNOM
             // 
@@ -234,6 +226,14 @@
             this.txtcouresNOM.Name = "txtcouresNOM";
             this.txtcouresNOM.Size = new System.Drawing.Size(262, 24);
             this.txtcouresNOM.TabIndex = 74;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.Location = new System.Drawing.Point(46, 149);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(497, 266);
+            this.panel2.TabIndex = 73;
             // 
             // FrmCourse
             // 

@@ -78,6 +78,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentManagemntSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagemntSystemDataSet.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCourse.resx">
       <DependentUpon>FrmCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +116,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="StudentManagemntSystemDataSet.xsc">
+      <DependentUpon>StudentManagemntSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentManagemntSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentManagemntSystemDataSet.xss">
+      <DependentUpon>StudentManagemntSystemDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
