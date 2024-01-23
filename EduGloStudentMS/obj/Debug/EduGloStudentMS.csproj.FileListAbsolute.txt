@@ -1,0 +1,10 @@
+D:\GitHub\eduglo-sms\EduGloStudentMS\bin\Debug\EduGloStudentMS.exe.config
+D:\GitHub\eduglo-sms\EduGloStudentMS\bin\Debug\EduGloStudentMS.exe
+D:\GitHub\eduglo-sms\EduGloStudentMS\bin\Debug\EduGloStudentMS.pdb
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.csproj.AssemblyReference.cache
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.Properties.Resources.resources
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.csproj.GenerateResource.cache
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.csproj.CoreCompileInputs.cache
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.exe
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.pdb
+D:\GitHub\eduglo-sms\EduGloStudentMS\obj\Debug\EduGloStudentMS.FrmLogin.resources
