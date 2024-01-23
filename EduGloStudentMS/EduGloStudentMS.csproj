@@ -83,6 +83,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentManagemntSystemDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentManagemntSystemDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagemntSystemDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManagemntSystemDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagemntSystemDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCourse.resx">
       <DependentUpon>FrmCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +136,28 @@
     </None>
     <None Include="StudentManagemntSystemDataSet.xss">
       <DependentUpon>StudentManagemntSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet1.xsc">
+      <DependentUpon>StudentManagemntSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentManagemntSystemDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentManagemntSystemDataSet1.xss">
+      <DependentUpon>StudentManagemntSystemDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet2.xsc">
+      <DependentUpon>StudentManagemntSystemDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentManagemntSystemDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentManagemntSystemDataSet2.xss">
+      <DependentUpon>StudentManagemntSystemDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
