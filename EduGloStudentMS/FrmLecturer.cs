@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,12 +17,21 @@ namespace EduGloStudentMS
         {
             InitializeComponent();
         }
+        //connect to database
+        static string connectionstring = "Data Source=LAPTOP-4R9I0DRP\\SQLEXPRESS;Initial Catalog=StudentManagemntSystem;Integrated Security=True;Encrypt=False";
+        SqlConnection con = new SqlConnection(connectionstring);
 
         private void btnhome_Click(object sender, EventArgs e)
         {
             FrmDashboard D = new FrmDashboard();
             this.Hide();
             D.Show();
+        }
+
+        private void FrmLecturer_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'studentManagemntSystemDataSet2.Lecturer' table. You can move, or remove it, as needed.
+            this.lecturerTableAdapter.Fill(this.studentManagemntSystemDataSet2.Lecturer);
         }
     }
 }

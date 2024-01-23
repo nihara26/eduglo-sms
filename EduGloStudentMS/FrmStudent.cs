@@ -18,7 +18,7 @@ namespace EduGloStudentMS
             InitializeComponent();
         }
         //connect to database
-        static string connectionstring = "Data Source = LAPTOP - 4R9I0DRP\\SQLEXPRESS;Initial Catalog = StudentManagemntSystem; Integrated Security = True; Encrypt=False";
+        static string connectionstring = "Data Source=LAPTOP-4R9I0DRP\\SQLEXPRESS;Initial Catalog=StudentManagemntSystem;Integrated Security=True;Encrypt=False";
         SqlConnection con = new SqlConnection(connectionstring);
 
         private void btnhome_Click(object sender, EventArgs e)
