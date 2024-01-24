@@ -94,6 +94,7 @@
             this.btnshowall.TabIndex = 71;
             this.btnshowall.Text = "Show All";
             this.btnshowall.UseVisualStyleBackColor = false;
+            this.btnshowall.Click += new System.EventHandler(this.btnshowall_Click);
             // 
             // btnsearch
             // 
@@ -105,6 +106,7 @@
             this.btnsearch.TabIndex = 70;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // btnclear
             // 
@@ -116,6 +118,7 @@
             this.btnclear.TabIndex = 69;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btndelete
             // 
@@ -127,6 +130,7 @@
             this.btndelete.TabIndex = 68;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnupdate
             // 
@@ -138,6 +142,7 @@
             this.btnupdate.TabIndex = 67;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btninsert
             // 
@@ -149,6 +154,7 @@
             this.btninsert.TabIndex = 66;
             this.btninsert.Text = "Insert";
             this.btninsert.UseVisualStyleBackColor = false;
+            this.btninsert.Click += new System.EventHandler(this.btninsert_Click);
             // 
             // txtcourseduration
             // 
@@ -261,8 +267,10 @@
             this.datagridcourse.Name = "datagridcourse";
             this.datagridcourse.RowHeadersWidth = 51;
             this.datagridcourse.RowTemplate.Height = 24;
-            this.datagridcourse.Size = new System.Drawing.Size(741, 427);
+            this.datagridcourse.Size = new System.Drawing.Size(738, 427);
             this.datagridcourse.TabIndex = 76;
+            this.datagridcourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridcourse_CellContentClick);
+            this.datagridcourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridcourse_CellContentClick);
             // 
             // courseIDDataGridViewTextBoxColumn
             // 
