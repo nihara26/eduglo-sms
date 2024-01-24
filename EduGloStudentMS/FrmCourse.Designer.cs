@@ -94,6 +94,7 @@
             this.btnshowall.TabIndex = 71;
             this.btnshowall.Text = "Show All";
             this.btnshowall.UseVisualStyleBackColor = false;
+            this.btnshowall.Click += new System.EventHandler(this.btnshowall_Click);
             // 
             // btnsearch
             // 
@@ -105,6 +106,7 @@
             this.btnsearch.TabIndex = 70;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // btnclear
             // 
@@ -267,6 +269,8 @@
             this.datagridcourse.RowTemplate.Height = 24;
             this.datagridcourse.Size = new System.Drawing.Size(738, 427);
             this.datagridcourse.TabIndex = 76;
+            this.datagridcourse.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridcourse_CellContentClick);
+            this.datagridcourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridcourse_CellContentClick);
             // 
             // courseIDDataGridViewTextBoxColumn
             // 

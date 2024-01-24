@@ -160,5 +160,76 @@ namespace EduGloStudentMS
             txtcourseduration.Clear();
             txtcouresNOM.Clear();
         }
+
+        private void btnshowall_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectall_query = "SELECT * FROM Course ";
+                SqlDataAdapter C = new SqlDataAdapter(selectall_query, con);
+                DataSet ds = new DataSet();
+
+                // Open the SQL connection
+                con.Open();
+
+                // Fill the DataSet
+                C.Fill(ds, "Course");
+
+                // Close the SQL connection
+                con.Close();
+
+                // Display the data in the DataGridView
+                datagridcourse.DataSource = ds.Tables["Course"];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while retrieving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnsearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string Course_ID = txtcourseid.Text;
+                string select_query = "SELECT * FROM Course WHERE Course_ID = '" + Course_ID + "'";
+                SqlDataAdapter cs = new SqlDataAdapter(select_query, con);
+                DataSet ds = new DataSet();
+
+                // Open the SQL connection
+                con.Open();
+
+                // Fill the DataSet
+                cs.Fill(ds, "Course");
+
+                // Close the SQL connection
+                con.Close();
+
+                // Check if any rows were returned
+                if (ds.Tables["Course"].Rows.Count > 0)
+                {
+                    // Display the search results in the DataGridView
+                    datagridcourse.DataSource = ds.Tables["Course"];
+                }
+                else
+                {
+                    MessageBox.Show("No records found for the specified Course ID.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Clear the DataGridView
+                    datagridcourse.DataSource = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while searching: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void datagridcourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtcourseid.Text = datagridcourse.SelectedRows[0].Cells[0].Value.ToString();
+            txtcoursename.Text = datagridcourse.SelectedRows[0].Cells[1].Value.ToString();
+            txtcourseduration.Text = datagridcourse.SelectedRows[0].Cells[2].Value.ToString();
+            txtcouresNOM.Text = datagridcourse.SelectedRows[0].Cells[3].Value.ToString();
+        }
     }
 }

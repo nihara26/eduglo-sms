@@ -67,11 +67,17 @@
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentManagemntSystemDataSet = new EduGloStudentMS.StudentManagemntSystemDataSet();
             this.studentTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSetTableAdapters.StudentTableAdapter();
+            this.studentManagemntSystemDataSet3 = new EduGloStudentMS.StudentManagemntSystemDataSet3();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.courseTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSet3TableAdapters.CourseTableAdapter();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -169,9 +175,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(506, 149);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(75, 23);
+            this.label8.Size = new System.Drawing.Size(123, 29);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Course :";
+            this.label8.Text = "Course ID :";
             // 
             // txtstudentid
             // 
@@ -220,14 +226,10 @@
             // 
             // comstucourses
             // 
+            this.comstucourses.DataSource = this.courseBindingSource;
+            this.comstucourses.DisplayMember = "Course_ID";
             this.comstucourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comstucourses.FormattingEnabled = true;
-            this.comstucourses.Items.AddRange(new object[] {
-            "CS1",
-            "BA2",
-            "EE3",
-            "PY4",
-            "ME5"});
             this.comstucourses.Location = new System.Drawing.Point(648, 149);
             this.comstucourses.Name = "comstucourses";
             this.comstucourses.Size = new System.Drawing.Size(235, 26);
@@ -338,6 +340,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
@@ -451,6 +454,29 @@
             // 
             this.studentTableAdapter.ClearBeforeFill = true;
             // 
+            // studentManagemntSystemDataSet3
+            // 
+            this.studentManagemntSystemDataSet3.DataSetName = "StudentManagemntSystemDataSet3";
+            this.studentManagemntSystemDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataMember = "Course";
+            this.courseBindingSource.DataSource = this.studentManagemntSystemDataSet3;
+            // 
+            // courseTableAdapter
+            // 
+            this.courseTableAdapter.ClearBeforeFill = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(653, 189);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(113, 20);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Course Name";
+            // 
             // FrmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -484,6 +510,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -528,5 +556,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teleNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
+        private StudentManagemntSystemDataSet3 studentManagemntSystemDataSet3;
+        private System.Windows.Forms.BindingSource courseBindingSource;
+        private StudentManagemntSystemDataSet3TableAdapters.CourseTableAdapter courseTableAdapter;
+        private System.Windows.Forms.Label label9;
     }
 }

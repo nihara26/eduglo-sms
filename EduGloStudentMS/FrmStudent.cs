@@ -30,6 +30,8 @@ namespace EduGloStudentMS
 
         private void FrmStudent_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'studentManagemntSystemDataSet3.Course' table. You can move, or remove it, as needed.
+            this.courseTableAdapter.Fill(this.studentManagemntSystemDataSet3.Course);
             // TODO: This line of code loads data into the 'studentManagemntSystemDataSet.Student' table. You can move, or remove it, as needed.
             this.studentTableAdapter.Fill(this.studentManagemntSystemDataSet.Student);
 
