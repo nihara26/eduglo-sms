@@ -149,6 +149,7 @@
             this.btninsert.TabIndex = 66;
             this.btninsert.Text = "Insert";
             this.btninsert.UseVisualStyleBackColor = false;
+            this.btninsert.Click += new System.EventHandler(this.btninsert_Click);
             // 
             // txtcourseduration
             // 
@@ -261,7 +262,7 @@
             this.datagridcourse.Name = "datagridcourse";
             this.datagridcourse.RowHeadersWidth = 51;
             this.datagridcourse.RowTemplate.Height = 24;
-            this.datagridcourse.Size = new System.Drawing.Size(741, 427);
+            this.datagridcourse.Size = new System.Drawing.Size(738, 427);
             this.datagridcourse.TabIndex = 76;
             // 
             // courseIDDataGridViewTextBoxColumn
