@@ -86,13 +86,19 @@ namespace EduGloStudentMS
                 //Get the Course_ID for deletion
                 string Course_ID = txtcourseid.Text;
 
+                //Check if the Course_ID is empty
+                if (string.IsNullOrWhiteSpace(Course_ID))
+                {
+                    MessageBox.Show("Please enter a Course ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if Course_ID is empty
+                }
+
                 //Confirm deletion with the user
                 DialogResult result = MessageBox.Show("Are you sure you want to delete this record?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 //If user clicks Yes, proceed with deletion
                 if (result == DialogResult.Yes)
                 {
-                    //Open the SQL connection
                     con.Open();
 
                     //SQL DELETE Query
@@ -120,7 +126,6 @@ namespace EduGloStudentMS
             }
             finally
             {
-                //Close the SQL connection
                 con.Close();
             }
         }
@@ -129,19 +134,26 @@ namespace EduGloStudentMS
         {
             try
             {
-                // Taking data from course form
+                //Taking data from course form
                 string Course_ID = txtcourseid.Text;
                 string Name = txtcoursename.Text;
                 string Duration = txtcourseduration.Text;
                 string NOM = txtcouresNOM.Text;
 
-                // Open the connection
+                //Check if any of the required fields is empty
+                if (string.IsNullOrWhiteSpace(Name) || string.IsNullOrWhiteSpace(Duration) || string.IsNullOrWhiteSpace(NOM))
+                {
+                    MessageBox.Show("Please fill in all the required fields.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method without executing the SQL query
+                }
+
+                //Open the connection
                 con.Open();
 
-                // SQL query
+                //SQL query
                 string update_query = "UPDATE Course SET Name = '" + Name + "', Duration = '" + Duration + "', NOM = '" + NOM + "' WHERE Course_ID = '" + Course_ID + "';";
 
-                // SQL command
+                //SQL command
                 using (SqlCommand cmd = new SqlCommand(update_query, con))
                 {
                     cmd.ExecuteNonQuery();
@@ -197,29 +209,37 @@ namespace EduGloStudentMS
             try
             {
                 string Course_ID = txtcourseid.Text;
+
+                //Check if the Course_ID is empty
+                if (string.IsNullOrWhiteSpace(Course_ID))
+                {
+                    MessageBox.Show("Please enter a Course ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Exit the method if Course_ID is empty
+                }
+
                 string select_query = "SELECT * FROM Course WHERE Course_ID = '" + Course_ID + "'";
                 SqlDataAdapter cs = new SqlDataAdapter(select_query, con);
                 DataSet ds = new DataSet();
 
-                // Open the SQL connection
+                //Open the SQL connection
                 con.Open();
 
-                // Fill the DataSet
+                //Fill the DataSet
                 cs.Fill(ds, "Course");
 
-                // Close the SQL connection
+                //Close the SQL connection
                 con.Close();
 
-                // Check if any rows were returned
+                //Check if any rows were returned
                 if (ds.Tables["Course"].Rows.Count > 0)
                 {
-                    // Display the search results in the DataGridView
+                    //Display the search results in the DataGridView
                     datagridcourse.DataSource = ds.Tables["Course"];
                 }
                 else
                 {
                     MessageBox.Show("No records found for the specified Course ID.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    // Clear the DataGridView
+                    //Clear the DataGridView
                     datagridcourse.DataSource = null;
                 }
             }
@@ -231,10 +251,28 @@ namespace EduGloStudentMS
 
         private void datagridcourse_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtcourseid.Text = datagridcourse.SelectedRows[0].Cells[0].Value.ToString();
-            txtcoursename.Text = datagridcourse.SelectedRows[0].Cells[1].Value.ToString();
-            txtcourseduration.Text = datagridcourse.SelectedRows[0].Cells[2].Value.ToString();
-            txtcouresNOM.Text = datagridcourse.SelectedRows[0].Cells[3].Value.ToString();
+            try
+            {
+                //Check if the clicked cell is within a valid row
+                if (e.RowIndex >= 0 && datagridcourse.SelectedRows.Count > 0)
+                {
+                    //Fill the text boxes with data from the selected row
+                    txtcourseid.Text = datagridcourse.SelectedRows[0].Cells[0].Value.ToString();
+                    txtcoursename.Text = datagridcourse.SelectedRows[0].Cells[1].Value.ToString();
+                    txtcourseduration.Text = datagridcourse.SelectedRows[0].Cells[2].Value.ToString();
+                    txtcouresNOM.Text = datagridcourse.SelectedRows[0].Cells[3].Value.ToString();
+                }
+                else
+                {
+                    //Inform the user to select the full row
+                    MessageBox.Show("Please select the full row to fill the text.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                //Display any exception that might occur
+                MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
