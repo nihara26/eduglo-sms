@@ -34,25 +34,37 @@ namespace EduGloStudentMS
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
+            // Check if username or password text boxes are empty
+            if (string.IsNullOrWhiteSpace(txtusername.Text) || string.IsNullOrWhiteSpace(txtpassword.Text))
+            {
+                MessageBox.Show("Username and password are required.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Exit the method
+            }
+
+            // Valid username and password
             string username = "admin";
             string password = "12345";
+
             if (username == txtusername.Text && password == txtpassword.Text)
             {
-                MessageBox.Show("Login successful. Welcome!");
+                MessageBox.Show("Login successful. Welcome!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmDashboard d = new FrmDashboard();
                 this.Hide();
                 d.Show();
-
-
             }
             else
             {
-                MessageBox.Show("Invalid username or password. Please try again.");
+                MessageBox.Show("Invalid username or password. Please try again.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

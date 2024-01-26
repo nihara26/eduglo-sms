@@ -53,20 +53,40 @@ namespace EduGloStudentMS
                     return; // exit the method without executing the SQL query
                 }
 
-                //SQL Query
-                string insert_query = "INSERT INTO Course VALUES ('" + Course_ID + "','" + Name + "','" + Duration + "','" + NOM + "');";
-
-                //SQL Command
-                SqlCommand cmd = new SqlCommand(insert_query, con);
-
-                //Open the SQL connection
+                // Open the SQL connection
                 con.Open();
 
-                //Execute the command
-                cmd.ExecuteNonQuery();
+                // Check if the course ID already exists in the database
+                string check_query = "SELECT COUNT(*) FROM Course WHERE Course_ID = @CourseID;";
+                using (SqlCommand checkCmd = new SqlCommand(check_query, con))
+                {
+                    checkCmd.Parameters.AddWithValue("@CourseID", Course_ID);
+                    int existingCourseCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    if (existingCourseCount > 0)
+                    {
+                        MessageBox.Show("Unable to proceed. The Course ID provided already exists in the database.", "Duplicate Course ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return; // exit the method without executing the SQL query
+                    }
+                }
 
-                //MessageBox with success icon
-                MessageBox.Show("Course details successfully added. Thank you.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // SQL Query
+                string insert_query = "INSERT INTO Course VALUES (@CourseID, @Name, @Duration, @NOM);";
+
+                // SQL Command
+                using (SqlCommand cmd = new SqlCommand(insert_query, con))
+                {
+                    // Add parameters
+                    cmd.Parameters.AddWithValue("@CourseID", Course_ID);
+                    cmd.Parameters.AddWithValue("@Name", Name);
+                    cmd.Parameters.AddWithValue("@Duration", Duration);
+                    cmd.Parameters.AddWithValue("@NOM", NOM);
+
+                    // Execute the command
+                    cmd.ExecuteNonQuery();
+
+                    //MessageBox with success icon
+                    MessageBox.Show("Course details successfully added. Thank you.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch (Exception ex)
             {
@@ -84,13 +104,59 @@ namespace EduGloStudentMS
             try
             {
                 //Get the Course_ID for deletion
-                string Course_ID = txtcourseid.Text;
+                string Course_ID = txtcourseid.Text.Trim();
 
                 //Check if the Course_ID is empty
                 if (string.IsNullOrWhiteSpace(Course_ID))
                 {
                     MessageBox.Show("Please enter a Course ID.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Exit the method if Course_ID is empty
+                    return; //Exit the method if Course_ID is empty
+                }
+
+                //Check if the record exists
+                bool recordExists = false;
+                con.Open();
+                string checkQuery = "SELECT COUNT(*) FROM Course WHERE Course_ID = @Course_ID";
+                using (SqlCommand checkCmd = new SqlCommand(checkQuery, con))
+                {
+                    checkCmd.Parameters.AddWithValue("@Course_ID", Course_ID);
+                    int count = (int)checkCmd.ExecuteScalar();
+                    recordExists = (count > 0);
+                }
+
+                if (!recordExists)
+                {
+                    MessageBox.Show("Record with provided Course ID does not exist.", "Invalid Course ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Check if there are associated records in the student table
+                bool hasStudents = false;
+                string checkStudentQuery = "SELECT COUNT(*) FROM Student WHERE CourseID = @CourseID";
+                using (SqlCommand checkStudentCmd = new SqlCommand(checkStudentQuery, con))
+                {
+                    checkStudentCmd.Parameters.AddWithValue("@CourseID", Course_ID);
+                    int studentCount = (int)checkStudentCmd.ExecuteScalar();
+                    hasStudents = (studentCount > 0);
+                }
+
+                // Check if there are associated records in the lecturer table
+                bool hasLecturers = false;
+                string checkLecturerQuery = "SELECT COUNT(*) FROM Lecturer WHERE Course_ID = @CourseID";
+                using (SqlCommand checkLecturerCmd = new SqlCommand(checkLecturerQuery, con))
+                {
+                    checkLecturerCmd.Parameters.AddWithValue("@CourseID", Course_ID);
+                    int lecturerCount = (int)checkLecturerCmd.ExecuteScalar();
+                    hasLecturers = (lecturerCount > 0);
+                }
+
+                con.Close();
+
+                //If there are associated records in either student or lecturer table, display a warning message
+                if (hasStudents || hasLecturers)
+                {
+                    MessageBox.Show("Cannot delete the course because there are associated records in the student or lecturer table.", "Cannot Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
 
                 //Confirm deletion with the user
@@ -102,13 +168,15 @@ namespace EduGloStudentMS
                     con.Open();
 
                     //SQL DELETE Query
-                    string delete_query = "DELETE FROM Course WHERE Course_ID = '" + Course_ID + "';";
+                    string delete_query = "DELETE FROM Course WHERE Course_ID = @CourseID";
 
                     //SQL Command
-                    SqlCommand cmd = new SqlCommand(@delete_query, con);
-
-                    //Execute the command
-                    cmd.ExecuteNonQuery();
+                    using (SqlCommand cmd = new SqlCommand(delete_query, con))
+                    {
+                        cmd.Parameters.AddWithValue("@CourseID", Course_ID);
+                        //Execute the command
+                        cmd.ExecuteNonQuery();
+                    }
 
                     //MessageBox for successful deletion with information icon
                     MessageBox.Show("Deletion completed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -121,7 +189,7 @@ namespace EduGloStudentMS
             }
             catch (Exception ex)
             {
-                //MessageBox with error icon and detailed error message
+                // MessageBox with error icon and detailed error message
                 MessageBox.Show($"An error occurred during the deletion process: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally

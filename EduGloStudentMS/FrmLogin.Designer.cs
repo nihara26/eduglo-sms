@@ -41,6 +41,7 @@
             this.btnlogin = new System.Windows.Forms.Button();
             this.btnclear = new System.Windows.Forms.Button();
             this.btnexit = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -175,6 +176,15 @@
             this.btnexit.UseVisualStyleBackColor = false;
             this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Location = new System.Drawing.Point(682, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(163, 384);
+            this.panel4.TabIndex = 11;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,6 +200,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "Form1";
@@ -217,6 +228,7 @@
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Button btnclear;
         private System.Windows.Forms.Button btnexit;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 

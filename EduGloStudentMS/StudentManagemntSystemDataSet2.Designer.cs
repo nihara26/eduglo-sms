@@ -291,6 +291,8 @@ namespace EduGloStudentMS {
             
             private global::System.Data.DataColumn columnYOE;
             
+            private global::System.Data.DataColumn columnCourse_ID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public LecturerDataTable() {
@@ -374,6 +376,14 @@ namespace EduGloStudentMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Course_IDColumn {
+                get {
+                    return this.columnCourse_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace EduGloStudentMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public LecturerRow AddLecturerRow(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE) {
+            public LecturerRow AddLecturerRow(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Course_ID) {
                 LecturerRow rowLecturerRow = ((LecturerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Lecturer_ID,
@@ -417,7 +427,8 @@ namespace EduGloStudentMS {
                         DOB,
                         Address,
                         TeleNo,
-                        YOE};
+                        YOE,
+                        Course_ID};
                 rowLecturerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowLecturerRow);
                 return rowLecturerRow;
@@ -453,6 +464,7 @@ namespace EduGloStudentMS {
                 this.columnAddress = base.Columns["Address"];
                 this.columnTeleNo = base.Columns["TeleNo"];
                 this.columnYOE = base.Columns["YOE"];
+                this.columnCourse_ID = base.Columns["Course_ID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace EduGloStudentMS {
                 base.Columns.Add(this.columnTeleNo);
                 this.columnYOE = new global::System.Data.DataColumn("YOE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnYOE);
+                this.columnCourse_ID = new global::System.Data.DataColumn("Course_ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCourse_ID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnLecturer_ID}, true));
                 this.columnLecturer_ID.AllowDBNull = false;
@@ -483,6 +497,8 @@ namespace EduGloStudentMS {
                 this.columnTeleNo.AllowDBNull = false;
                 this.columnYOE.AllowDBNull = false;
                 this.columnYOE.MaxLength = 50;
+                this.columnCourse_ID.AllowDBNull = false;
+                this.columnCourse_ID.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -688,6 +704,17 @@ namespace EduGloStudentMS {
                     this[this.tableLecturer.YOEColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Course_ID {
+                get {
+                    return ((string)(this[this.tableLecturer.Course_IDColumn]));
+                }
+                set {
+                    this[this.tableLecturer.Course_IDColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -855,12 +882,11 @@ namespace EduGloStudentMS.StudentManagemntSystemDataSet2TableAdapters {
             tableMapping.ColumnMappings.Add("Address", "Address");
             tableMapping.ColumnMappings.Add("TeleNo", "TeleNo");
             tableMapping.ColumnMappings.Add("YOE", "YOE");
+            tableMapping.ColumnMappings.Add("Course_ID", "Course_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Lecturer] WHERE (([Lecturer_ID] = @Original_Lecturer_ID) AND (" +
-                "[Name] = @Original_Name) AND ([DOB] = @Original_DOB) AND ([Address] = @Original_" +
-                "Address) AND ([TeleNo] = @Original_TeleNo) AND ([YOE] = @Original_YOE))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Lecturer] WHERE (([Lecturer_ID] = @Original_Lecturer_ID) AND ([Name] = @Original_Name) AND ([DOB] = @Original_DOB) AND ([Address] = @Original_Address) AND ([TeleNo] = @Original_TeleNo) AND ([YOE] = @Original_YOE) AND ([Course_ID] = @Original_Course_ID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lecturer_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -868,12 +894,11 @@ namespace EduGloStudentMS.StudentManagemntSystemDataSet2TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeleNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeleNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YOE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YOE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Course_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Course_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Lecturer] ([Lecturer_ID], [Name], [DOB], [Address], [TeleNo], " +
-                "[YOE]) VALUES (@Lecturer_ID, @Name, @DOB, @Address, @TeleNo, @YOE);\r\nSELECT Lect" +
-                "urer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecturer_ID = @Lec" +
-                "turer_ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Lecturer] ([Lecturer_ID], [Name], [DOB], [Address], [TeleNo], [YOE], [Course_ID]) VALUES (@Lecturer_ID, @Name, @DOB, @Address, @TeleNo, @YOE, @Course_ID);
+SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE, Course_ID FROM Lecturer WHERE (Lecturer_ID = @Lecturer_ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lecturer_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -881,10 +906,11 @@ namespace EduGloStudentMS.StudentManagemntSystemDataSet2TableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeleNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeleNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YOE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YOE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Course_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Course_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Lecturer] SET [Lecturer_ID] = @Lecturer_ID, [Name] = @Name, [DOB] = @DOB, [Address] = @Address, [TeleNo] = @TeleNo, [YOE] = @YOE WHERE (([Lecturer_ID] = @Original_Lecturer_ID) AND ([Name] = @Original_Name) AND ([DOB] = @Original_DOB) AND ([Address] = @Original_Address) AND ([TeleNo] = @Original_TeleNo) AND ([YOE] = @Original_YOE));
-SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecturer_ID = @Lecturer_ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Lecturer] SET [Lecturer_ID] = @Lecturer_ID, [Name] = @Name, [DOB] = @DOB, [Address] = @Address, [TeleNo] = @TeleNo, [YOE] = @YOE, [Course_ID] = @Course_ID WHERE (([Lecturer_ID] = @Original_Lecturer_ID) AND ([Name] = @Original_Name) AND ([DOB] = @Original_DOB) AND ([Address] = @Original_Address) AND ([TeleNo] = @Original_TeleNo) AND ([YOE] = @Original_YOE) AND ([Course_ID] = @Original_Course_ID));
+SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE, Course_ID FROM Lecturer WHERE (Lecturer_ID = @Lecturer_ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Lecturer_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -892,12 +918,14 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Address", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TeleNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeleNo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@YOE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YOE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Course_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Course_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Lecturer_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Lecturer_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DOB", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DOB", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Address", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Address", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TeleNo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TeleNo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_YOE", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "YOE", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Course_ID", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Course_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -913,7 +941,7 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM dbo.Lecturer";
+            this._commandCollection[0].CommandText = "SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE, Course_ID FROM dbo.Lecturer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -974,7 +1002,7 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE) {
+        public virtual int Delete(string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE, string Original_Course_ID) {
             if ((Original_Lecturer_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_Lecturer_ID");
             }
@@ -1001,6 +1029,12 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_YOE));
             }
+            if ((Original_Course_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_Course_ID");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_Course_ID));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1021,7 +1055,7 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE) {
+        public virtual int Insert(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Course_ID) {
             if ((Lecturer_ID == null)) {
                 throw new global::System.ArgumentNullException("Lecturer_ID");
             }
@@ -1048,6 +1082,12 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((string)(YOE));
             }
+            if ((Course_ID == null)) {
+                throw new global::System.ArgumentNullException("Course_ID");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Course_ID));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1068,7 +1108,7 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE) {
+        public virtual int Update(string Lecturer_ID, string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Course_ID, string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE, string Original_Course_ID) {
             if ((Lecturer_ID == null)) {
                 throw new global::System.ArgumentNullException("Lecturer_ID");
             }
@@ -1095,31 +1135,43 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(YOE));
             }
+            if ((Course_ID == null)) {
+                throw new global::System.ArgumentNullException("Course_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Course_ID));
+            }
             if ((Original_Lecturer_ID == null)) {
                 throw new global::System.ArgumentNullException("Original_Lecturer_ID");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Lecturer_ID));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Lecturer_ID));
             }
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_Name));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_DOB));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_DOB));
             if ((Original_Address == null)) {
                 throw new global::System.ArgumentNullException("Original_Address");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Address));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_Address));
             }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_TeleNo));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_TeleNo));
             if ((Original_YOE == null)) {
                 throw new global::System.ArgumentNullException("Original_YOE");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_YOE));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_YOE));
+            }
+            if ((Original_Course_ID == null)) {
+                throw new global::System.ArgumentNullException("Original_Course_ID");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Course_ID));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1141,8 +1193,8 @@ SELECT Lecturer_ID, Name, DOB, Address, TeleNo, YOE FROM Lecturer WHERE (Lecture
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE) {
-            return this.Update(Original_Lecturer_ID, Name, DOB, Address, TeleNo, YOE, Original_Lecturer_ID, Original_Name, Original_DOB, Original_Address, Original_TeleNo, Original_YOE);
+        public virtual int Update(string Name, System.DateTime DOB, string Address, int TeleNo, string YOE, string Course_ID, string Original_Lecturer_ID, string Original_Name, System.DateTime Original_DOB, string Original_Address, int Original_TeleNo, string Original_YOE, string Original_Course_ID) {
+            return this.Update(Original_Lecturer_ID, Name, DOB, Address, TeleNo, YOE, Course_ID, Original_Lecturer_ID, Original_Name, Original_DOB, Original_Address, Original_TeleNo, Original_YOE, Original_Course_ID);
         }
     }
     

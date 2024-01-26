@@ -53,30 +53,37 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lablCoursename = new System.Windows.Forms.Label();
+            this.comlectcourses = new System.Windows.Forms.ComboBox();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManagemntSystemDataSet4 = new EduGloStudentMS.StudentManagemntSystemDataSet4();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.courseTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSet4TableAdapters.CourseTableAdapter();
             this.datagridlecturer = new System.Windows.Forms.DataGridView();
-            this.txtlectcourseid = new System.Windows.Forms.TextBox();
-            this.studentManagemntSystemDataSet2 = new EduGloStudentMS.StudentManagemntSystemDataSet2();
-            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lecturerTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSet2TableAdapters.LecturerTableAdapter();
             this.lecturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dOBDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teleNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.yOEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lecturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManagemntSystemDataSet2 = new EduGloStudentMS.StudentManagemntSystemDataSet2();
+            this.lecturerTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSet2TableAdapters.LecturerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridlecturer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Montserrat", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(521, 44);
+            this.label2.Location = new System.Drawing.Point(627, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 27);
             this.label2.TabIndex = 4;
@@ -104,6 +111,7 @@
             this.btnshowall.TabIndex = 51;
             this.btnshowall.Text = "Show All";
             this.btnshowall.UseVisualStyleBackColor = false;
+            this.btnshowall.Click += new System.EventHandler(this.btnshowall_Click);
             // 
             // btnsearch
             // 
@@ -115,6 +123,7 @@
             this.btnsearch.TabIndex = 50;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // btnclear
             // 
@@ -126,6 +135,7 @@
             this.btnclear.TabIndex = 49;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btndelete
             // 
@@ -137,6 +147,7 @@
             this.btndelete.TabIndex = 48;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnupdate
             // 
@@ -148,6 +159,7 @@
             this.btnupdate.TabIndex = 47;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btninsert
             // 
@@ -159,6 +171,7 @@
             this.btninsert.TabIndex = 46;
             this.btninsert.Text = "Insert";
             this.btninsert.UseVisualStyleBackColor = false;
+            this.btninsert.Click += new System.EventHandler(this.btninsert_Click);
             // 
             // txtlectelephone
             // 
@@ -210,7 +223,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(484, 88);
+            this.label8.Location = new System.Drawing.Point(484, 151);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(98, 23);
             this.label8.TabIndex = 36;
@@ -275,7 +288,7 @@
             // 
             this.txtlectureryoe.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtlectureryoe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlectureryoe.Location = new System.Drawing.Point(637, 148);
+            this.txtlectureryoe.Location = new System.Drawing.Point(637, 89);
             this.txtlectureryoe.Name = "txtlectureryoe";
             this.txtlectureryoe.Size = new System.Drawing.Size(219, 24);
             this.txtlectureryoe.TabIndex = 53;
@@ -285,7 +298,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(484, 149);
+            this.label5.Location = new System.Drawing.Point(484, 90);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 23);
             this.label5.TabIndex = 52;
@@ -304,7 +317,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.txtlectcourseid);
+            this.panel1.Controls.Add(this.lablCoursename);
+            this.panel1.Controls.Add(this.comlectcourses);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtlectureryoe);
@@ -322,6 +336,41 @@
             this.panel1.Size = new System.Drawing.Size(893, 293);
             this.panel1.TabIndex = 55;
             // 
+            // lablCoursename
+            // 
+            this.lablCoursename.AutoSize = true;
+            this.lablCoursename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablCoursename.ForeColor = System.Drawing.Color.Green;
+            this.lablCoursename.Location = new System.Drawing.Point(641, 187);
+            this.lablCoursename.Name = "lablCoursename";
+            this.lablCoursename.Size = new System.Drawing.Size(21, 20);
+            this.lablCoursename.TabIndex = 78;
+            this.lablCoursename.Text = "...";
+            this.lablCoursename.Click += new System.EventHandler(this.lablCoursename_Click);
+            // 
+            // comlectcourses
+            // 
+            this.comlectcourses.DataSource = this.courseBindingSource;
+            this.comlectcourses.DisplayMember = "Course_ID";
+            this.comlectcourses.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comlectcourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comlectcourses.FormattingEnabled = true;
+            this.comlectcourses.Location = new System.Drawing.Point(637, 148);
+            this.comlectcourses.Name = "comlectcourses";
+            this.comlectcourses.Size = new System.Drawing.Size(219, 26);
+            this.comlectcourses.TabIndex = 77;
+            this.comlectcourses.SelectedIndexChanged += new System.EventHandler(this.lablCoursename_Click);
+            // 
+            // courseBindingSource
+            // 
+            this.courseBindingSource.DataMember = "Course";
+            this.courseBindingSource.DataSource = this.studentManagemntSystemDataSet4;
+            // 
+            // studentManagemntSystemDataSet4
+            // 
+            this.studentManagemntSystemDataSet4.DataSetName = "StudentManagemntSystemDataSet4";
+            this.studentManagemntSystemDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
@@ -329,6 +378,10 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(890, 292);
             this.panel2.TabIndex = 74;
+            // 
+            // courseTableAdapter
+            // 
+            this.courseTableAdapter.ClearBeforeFill = true;
             // 
             // datagridlecturer
             // 
@@ -340,37 +393,17 @@
             this.dOBDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
             this.teleNoDataGridViewTextBoxColumn,
-            this.yOEDataGridViewTextBoxColumn});
+            this.yOEDataGridViewTextBoxColumn,
+            this.courseIDDataGridViewTextBoxColumn});
             this.datagridlecturer.DataSource = this.lecturerBindingSource;
-            this.datagridlecturer.Location = new System.Drawing.Point(175, 459);
+            this.datagridlecturer.Location = new System.Drawing.Point(89, 457);
             this.datagridlecturer.Name = "datagridlecturer";
             this.datagridlecturer.RowHeadersWidth = 51;
             this.datagridlecturer.RowTemplate.Height = 24;
-            this.datagridlecturer.Size = new System.Drawing.Size(1074, 372);
+            this.datagridlecturer.Size = new System.Drawing.Size(1239, 382);
             this.datagridlecturer.TabIndex = 75;
-            // 
-            // txtlectcourseid
-            // 
-            this.txtlectcourseid.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.txtlectcourseid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtlectcourseid.Location = new System.Drawing.Point(637, 88);
-            this.txtlectcourseid.Name = "txtlectcourseid";
-            this.txtlectcourseid.Size = new System.Drawing.Size(218, 24);
-            this.txtlectcourseid.TabIndex = 76;
-            // 
-            // studentManagemntSystemDataSet2
-            // 
-            this.studentManagemntSystemDataSet2.DataSetName = "StudentManagemntSystemDataSet2";
-            this.studentManagemntSystemDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lecturerBindingSource
-            // 
-            this.lecturerBindingSource.DataMember = "Lecturer";
-            this.lecturerBindingSource.DataSource = this.studentManagemntSystemDataSet2;
-            // 
-            // lecturerTableAdapter
-            // 
-            this.lecturerTableAdapter.ClearBeforeFill = true;
+            this.datagridlecturer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridlecturer_CellContentClick);
+            this.datagridlecturer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridlecturer_CellContentClick);
             // 
             // lecturerIDDataGridViewTextBoxColumn
             // 
@@ -420,6 +453,28 @@
             this.yOEDataGridViewTextBoxColumn.Name = "yOEDataGridViewTextBoxColumn";
             this.yOEDataGridViewTextBoxColumn.Width = 125;
             // 
+            // courseIDDataGridViewTextBoxColumn
+            // 
+            this.courseIDDataGridViewTextBoxColumn.DataPropertyName = "Course_ID";
+            this.courseIDDataGridViewTextBoxColumn.HeaderText = "Course_ID";
+            this.courseIDDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.courseIDDataGridViewTextBoxColumn.Name = "courseIDDataGridViewTextBoxColumn";
+            this.courseIDDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // lecturerBindingSource
+            // 
+            this.lecturerBindingSource.DataMember = "Lecturer";
+            this.lecturerBindingSource.DataSource = this.studentManagemntSystemDataSet2;
+            // 
+            // studentManagemntSystemDataSet2
+            // 
+            this.studentManagemntSystemDataSet2.DataSetName = "StudentManagemntSystemDataSet2";
+            this.studentManagemntSystemDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lecturerTableAdapter
+            // 
+            this.lecturerTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -446,9 +501,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridlecturer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lecturerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,8 +537,12 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox comlectcourses;
+        private System.Windows.Forms.Label lablCoursename;
+        private StudentManagemntSystemDataSet4 studentManagemntSystemDataSet4;
+        private System.Windows.Forms.BindingSource courseBindingSource;
+        private StudentManagemntSystemDataSet4TableAdapters.CourseTableAdapter courseTableAdapter;
         private System.Windows.Forms.DataGridView datagridlecturer;
-        private System.Windows.Forms.TextBox txtlectcourseid;
         private StudentManagemntSystemDataSet2 studentManagemntSystemDataSet2;
         private System.Windows.Forms.BindingSource lecturerBindingSource;
         private StudentManagemntSystemDataSet2TableAdapters.LecturerTableAdapter lecturerTableAdapter;
@@ -491,5 +552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn teleNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yOEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn courseIDDataGridViewTextBoxColumn;
     }
 }

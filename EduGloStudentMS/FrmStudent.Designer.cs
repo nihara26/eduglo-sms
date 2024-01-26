@@ -45,8 +45,8 @@
             this.txtstuaddress = new System.Windows.Forms.TextBox();
             this.txtstutelephone = new System.Windows.Forms.TextBox();
             this.comstucourses = new System.Windows.Forms.ComboBox();
-            this.rdibtnmale = new System.Windows.Forms.RadioButton();
-            this.rdibtnfemale = new System.Windows.Forms.RadioButton();
+            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.studentManagemntSystemDataSet3 = new EduGloStudentMS.StudentManagemntSystemDataSet3();
             this.btninsert = new System.Windows.Forms.Button();
             this.btnupdate = new System.Windows.Forms.Button();
             this.btndelete = new System.Windows.Forms.Button();
@@ -55,6 +55,8 @@
             this.btnshowall = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.combogender = new System.Windows.Forms.ComboBox();
+            this.lablCoursename = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.datagridstudent = new System.Windows.Forms.DataGridView();
             this.studentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,17 +69,14 @@
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.studentManagemntSystemDataSet = new EduGloStudentMS.StudentManagemntSystemDataSet();
             this.studentTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSetTableAdapters.StudentTableAdapter();
-            this.studentManagemntSystemDataSet3 = new EduGloStudentMS.StudentManagemntSystemDataSet3();
-            this.courseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.courseTableAdapter = new EduGloStudentMS.StudentManagemntSystemDataSet3TableAdapters.CourseTableAdapter();
-            this.label9 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -129,7 +128,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(16, 149);
+            this.label4.Location = new System.Drawing.Point(16, 150);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 23);
             this.label4.TabIndex = 8;
@@ -140,7 +139,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(16, 208);
+            this.label5.Location = new System.Drawing.Point(16, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 23);
             this.label5.TabIndex = 9;
@@ -151,7 +150,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(506, 30);
+            this.label6.Location = new System.Drawing.Point(519, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(85, 23);
             this.label6.TabIndex = 10;
@@ -162,7 +161,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(506, 87);
+            this.label7.Location = new System.Drawing.Point(519, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 23);
             this.label7.TabIndex = 11;
@@ -173,9 +172,9 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.LightSkyBlue;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(506, 149);
+            this.label8.Location = new System.Drawing.Point(519, 149);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 29);
+            this.label8.Size = new System.Drawing.Size(98, 23);
             this.label8.TabIndex = 12;
             this.label8.Text = "Course ID :";
             // 
@@ -210,56 +209,42 @@
             // 
             this.txtstuaddress.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtstuaddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstuaddress.Location = new System.Drawing.Point(648, 30);
+            this.txtstuaddress.Location = new System.Drawing.Point(657, 31);
             this.txtstuaddress.Name = "txtstuaddress";
-            this.txtstuaddress.Size = new System.Drawing.Size(235, 24);
+            this.txtstuaddress.Size = new System.Drawing.Size(226, 24);
             this.txtstuaddress.TabIndex = 17;
             // 
             // txtstutelephone
             // 
             this.txtstutelephone.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtstutelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstutelephone.Location = new System.Drawing.Point(648, 88);
+            this.txtstutelephone.Location = new System.Drawing.Point(657, 89);
             this.txtstutelephone.Name = "txtstutelephone";
-            this.txtstutelephone.Size = new System.Drawing.Size(235, 24);
+            this.txtstutelephone.Size = new System.Drawing.Size(226, 24);
             this.txtstutelephone.TabIndex = 18;
             // 
             // comstucourses
             // 
             this.comstucourses.DataSource = this.courseBindingSource;
             this.comstucourses.DisplayMember = "Course_ID";
+            this.comstucourses.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comstucourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comstucourses.FormattingEnabled = true;
-            this.comstucourses.Location = new System.Drawing.Point(648, 149);
+            this.comstucourses.Location = new System.Drawing.Point(657, 150);
             this.comstucourses.Name = "comstucourses";
-            this.comstucourses.Size = new System.Drawing.Size(235, 26);
+            this.comstucourses.Size = new System.Drawing.Size(226, 26);
             this.comstucourses.TabIndex = 20;
+            this.comstucourses.SelectedIndexChanged += new System.EventHandler(this.comstucourses_SelectedIndexChanged);
             // 
-            // rdibtnmale
+            // courseBindingSource
             // 
-            this.rdibtnmale.AutoSize = true;
-            this.rdibtnmale.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.rdibtnmale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdibtnmale.Location = new System.Drawing.Point(209, 208);
-            this.rdibtnmale.Name = "rdibtnmale";
-            this.rdibtnmale.Size = new System.Drawing.Size(66, 24);
-            this.rdibtnmale.TabIndex = 21;
-            this.rdibtnmale.TabStop = true;
-            this.rdibtnmale.Text = "Male";
-            this.rdibtnmale.UseVisualStyleBackColor = false;
+            this.courseBindingSource.DataMember = "Course";
+            this.courseBindingSource.DataSource = this.studentManagemntSystemDataSet3;
             // 
-            // rdibtnfemale
+            // studentManagemntSystemDataSet3
             // 
-            this.rdibtnfemale.AutoSize = true;
-            this.rdibtnfemale.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.rdibtnfemale.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdibtnfemale.Location = new System.Drawing.Point(312, 208);
-            this.rdibtnfemale.Name = "rdibtnfemale";
-            this.rdibtnfemale.Size = new System.Drawing.Size(85, 24);
-            this.rdibtnfemale.TabIndex = 22;
-            this.rdibtnfemale.TabStop = true;
-            this.rdibtnfemale.Text = "Female";
-            this.rdibtnfemale.UseVisualStyleBackColor = false;
+            this.studentManagemntSystemDataSet3.DataSetName = "StudentManagemntSystemDataSet3";
+            this.studentManagemntSystemDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btninsert
             // 
@@ -271,6 +256,7 @@
             this.btninsert.TabIndex = 24;
             this.btninsert.Text = "Insert";
             this.btninsert.UseVisualStyleBackColor = false;
+            this.btninsert.Click += new System.EventHandler(this.btninsert_Click);
             // 
             // btnupdate
             // 
@@ -282,6 +268,7 @@
             this.btnupdate.TabIndex = 25;
             this.btnupdate.Text = "Update";
             this.btnupdate.UseVisualStyleBackColor = false;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
             // 
             // btndelete
             // 
@@ -293,6 +280,7 @@
             this.btndelete.TabIndex = 26;
             this.btndelete.Text = "Delete";
             this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // btnclear
             // 
@@ -304,6 +292,7 @@
             this.btnclear.TabIndex = 27;
             this.btnclear.Text = "Clear";
             this.btnclear.UseVisualStyleBackColor = false;
+            this.btnclear.Click += new System.EventHandler(this.btnclear_Click);
             // 
             // btnsearch
             // 
@@ -315,6 +304,7 @@
             this.btnsearch.TabIndex = 28;
             this.btnsearch.Text = "Search";
             this.btnsearch.UseVisualStyleBackColor = false;
+            this.btnsearch.Click += new System.EventHandler(this.btnsearch_Click);
             // 
             // btnshowall
             // 
@@ -326,6 +316,7 @@
             this.btnshowall.TabIndex = 29;
             this.btnshowall.Text = "Show All";
             this.btnshowall.UseVisualStyleBackColor = false;
+            this.btnshowall.Click += new System.EventHandler(this.btnshowall_Click);
             // 
             // pictureBox2
             // 
@@ -340,21 +331,43 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.combogender);
+            this.panel1.Controls.Add(this.lablCoursename);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.txtstuaddress);
             this.panel1.Controls.Add(this.txtstutelephone);
             this.panel1.Controls.Add(this.comstucourses);
-            this.panel1.Controls.Add(this.rdibtnmale);
-            this.panel1.Controls.Add(this.rdibtnfemale);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(56, 133);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(939, 289);
             this.panel1.TabIndex = 31;
+            // 
+            // combogender
+            // 
+            this.combogender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.combogender.FormattingEnabled = true;
+            this.combogender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.combogender.Location = new System.Drawing.Point(209, 209);
+            this.combogender.Name = "combogender";
+            this.combogender.Size = new System.Drawing.Size(197, 26);
+            this.combogender.TabIndex = 24;
+            // 
+            // lablCoursename
+            // 
+            this.lablCoursename.AutoSize = true;
+            this.lablCoursename.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lablCoursename.ForeColor = System.Drawing.Color.Green;
+            this.lablCoursename.Location = new System.Drawing.Point(653, 190);
+            this.lablCoursename.Name = "lablCoursename";
+            this.lablCoursename.Size = new System.Drawing.Size(21, 20);
+            this.lablCoursename.TabIndex = 23;
+            this.lablCoursename.Text = "...";
             // 
             // panel2
             // 
@@ -383,6 +396,8 @@
             this.datagridstudent.RowTemplate.Height = 24;
             this.datagridstudent.Size = new System.Drawing.Size(1239, 279);
             this.datagridstudent.TabIndex = 76;
+            this.datagridstudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridstudent_CellContentClick);
+            this.datagridstudent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridstudent_CellContentClick);
             // 
             // studentIDDataGridViewTextBoxColumn
             // 
@@ -454,28 +469,9 @@
             // 
             this.studentTableAdapter.ClearBeforeFill = true;
             // 
-            // studentManagemntSystemDataSet3
-            // 
-            this.studentManagemntSystemDataSet3.DataSetName = "StudentManagemntSystemDataSet3";
-            this.studentManagemntSystemDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // courseBindingSource
-            // 
-            this.courseBindingSource.DataMember = "Course";
-            this.courseBindingSource.DataSource = this.studentManagemntSystemDataSet3;
-            // 
             // courseTableAdapter
             // 
             this.courseTableAdapter.ClearBeforeFill = true;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(653, 189);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 20);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Course Name";
             // 
             // FrmStudent
             // 
@@ -504,14 +500,14 @@
             this.Name = "FrmStudent";
             this.Text = "FrmStudent";
             this.Load += new System.EventHandler(this.FrmStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridstudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentManagemntSystemDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.courseBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -534,8 +530,6 @@
         private System.Windows.Forms.TextBox txtstuaddress;
         private System.Windows.Forms.TextBox txtstutelephone;
         private System.Windows.Forms.ComboBox comstucourses;
-        private System.Windows.Forms.RadioButton rdibtnmale;
-        private System.Windows.Forms.RadioButton rdibtnfemale;
         private System.Windows.Forms.Button btninsert;
         private System.Windows.Forms.Button btnupdate;
         private System.Windows.Forms.Button btndelete;
@@ -559,6 +553,7 @@
         private StudentManagemntSystemDataSet3 studentManagemntSystemDataSet3;
         private System.Windows.Forms.BindingSource courseBindingSource;
         private StudentManagemntSystemDataSet3TableAdapters.CourseTableAdapter courseTableAdapter;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lablCoursename;
+        private System.Windows.Forms.ComboBox combogender;
     }
 }
