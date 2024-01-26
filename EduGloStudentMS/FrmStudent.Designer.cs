@@ -227,6 +227,7 @@
             // 
             this.comstucourses.DataSource = this.courseBindingSource;
             this.comstucourses.DisplayMember = "Course_ID";
+            this.comstucourses.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.comstucourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comstucourses.FormattingEnabled = true;
             this.comstucourses.Location = new System.Drawing.Point(657, 150);

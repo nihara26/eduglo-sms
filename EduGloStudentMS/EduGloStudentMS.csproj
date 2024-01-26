@@ -98,6 +98,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentManagemntSystemDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="StudentManagemntSystemDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentManagemntSystemDataSet4.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmCourse.resx">
       <DependentUpon>FrmCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +179,17 @@
     </None>
     <None Include="StudentManagemntSystemDataSet3.xss">
       <DependentUpon>StudentManagemntSystemDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet4.xsc">
+      <DependentUpon>StudentManagemntSystemDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="StudentManagemntSystemDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentManagemntSystemDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StudentManagemntSystemDataSet4.xss">
+      <DependentUpon>StudentManagemntSystemDataSet4.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
