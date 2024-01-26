@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace EduGloStudentMS
 {
@@ -24,9 +25,14 @@ namespace EduGloStudentMS
 
         private void btnlogout_Click(object sender, EventArgs e)
         {
-            FrmLogin A = new FrmLogin();
-            this.Hide();
-            A.Show();
+            DialogResult result = MessageBox.Show("Are you sure you want to Logout? ", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                FrmLogin A = new FrmLogin();
+                this.Hide();
+                A.Show();
+            }
         }
 
         private void btnstudent_Click(object sender, EventArgs e)
