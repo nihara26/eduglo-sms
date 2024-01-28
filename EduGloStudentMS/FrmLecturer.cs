@@ -382,22 +382,22 @@ namespace EduGloStudentMS
                     return; // Exit the method if Lecturer_ID is empty
                 }
 
-                //Check if the given Student_ID exists in the database
+                //Check if the given Lecturer_ID exists in the database
                 bool lecturerExists = false;
                 con.Open();
                 string check_query = "SELECT COUNT(*) FROM Lecturer WHERE Lecturer_ID = @LecturerID;";
                 using (SqlCommand checkCmd = new SqlCommand(check_query, con))
                 {
                     checkCmd.Parameters.AddWithValue("@LecturerID", Lecturer_ID);
-                    int existingStudentCount = Convert.ToInt32(checkCmd.ExecuteScalar());
-                    lecturerExists = existingStudentCount > 0;
+                    int existingLecturerCount = Convert.ToInt32(checkCmd.ExecuteScalar());
+                    lecturerExists = existingLecturerCount > 0;
                 }
                 con.Close();
 
                 //If the Lecturer does not exist, shows a warning message
                 if (!lecturerExists)
                 {
-                    MessageBox.Show("The Student ID does not exist in the database. Deletion cannot be performed.", "Invalid Lecturer ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("The Lecturer ID does not exist in the database. Deletion cannot be performed.", "Invalid Lecturer ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
