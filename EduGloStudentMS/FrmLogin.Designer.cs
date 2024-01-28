@@ -203,7 +203,7 @@
             this.Controls.Add(this.panel4);
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
-            this.Text = "Form1";
+            this.Text = "Admin";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
